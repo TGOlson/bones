@@ -11,11 +11,14 @@ const logBundleError = (err) => {
   gutil.log('Error bundling components: ', err.message);
 };
 
-gulp.task('browserify', () => {
-  return browserify('src/index.js', {debug: true})
+gulp.task('browserify', (cb) => {
+  return browserify('src/**/*.js', {debug: true})
     .transform(babelify)
     .bundle()
-    .on('error', logBundleError)
+    .on('error', (err) => {
+      logBundleError(err);
+      cb();
+    })
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('dist'));
 });

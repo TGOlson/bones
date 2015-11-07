@@ -1,3 +1,1 @@
-const foo = (x: number) => x * 10;
-
-foo(2);
+// put cool stuff here
