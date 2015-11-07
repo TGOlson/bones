@@ -12,7 +12,10 @@ const logBundleError = (err) => {
 };
 
 gulp.task('browserify', (cb) => {
-  return browserify('src/**/*.js', {debug: true})
+  return browserify('src/index.js', {
+    debug: true,
+    standalone: 'bones',
+  })
     .transform(babelify)
     .bundle()
     .on('error', (err) => {

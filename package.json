@@ -24,5 +24,8 @@
     "gulp-shell": "^0.5.1",
     "gulp-util": "^3.0.7",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "ramda": "^0.18.0"
   }
 }
