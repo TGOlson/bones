@@ -2,7 +2,7 @@
 // import type {Tuple} from './types/tuple';
 
 import type {Board} from './board';
-import {show} from './board';
+import {show, getEdges} from './board';
 // import type {Domino} from './domino';
 
 export const board: Board = {
@@ -21,6 +21,6 @@ export const board: Board = {
   ],
 };
 
-export const showBoard = () => show(board);
 
-console.log(showBoard());
+console.log(show(board));
+console.log(getEdges(board));
